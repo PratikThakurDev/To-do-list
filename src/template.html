@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>📝 My Todo App</h1>
+        </header>
+
+        <div class="main-container">
+      <!-- Sidebar: Project List -->
+        <aside id="sidebar">
+            <h2>Projects</h2>
+            <ul id="project-list">
+          <!-- Example Projects -->
+                <li class="project active" data-id="inbox">📥 Inbox</li>
+          <!-- More projects will be added here -->
+            </ul>
+            <button id="add-project-btn">+ Add Project</button>
+        </aside>
+
+      <!-- Main Panel: Todos -->
+        <main id="main">
+            <h2 id="project-title">Inbox</h2>
+            <ul id="todo-list">
+          <!-- Todos will be rendered here -->
+            </ul>
+            <button id="add-todo-btn">+ Add Todo</button>
+        </main>
+    </div>
+    <div id="project-modal" class="modal hidden">
+        <div class="modal-content">
+        <h3>Add New Project</h3>
+        <input type="text" id="project-name-input" placeholder="Project name" />
+        <button id="save-project-btn">Save</button>
+        <button id="cancel-project-btn">Cancel</button>
+        </div>
+    </div>
+    <div id="todo-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Add New Todo</h3>
+            <input type="text" id="todo-title" placeholder="Title" required />
+            <textarea id="todo-description" placeholder="Description"></textarea>
+            <input type="date" id="todo-due-date" />
+            <select id="todo-priority">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
+            <button id="save-todo-btn">Save</button>
+            <button id="cancel-todo-btn">Cancel</button>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
