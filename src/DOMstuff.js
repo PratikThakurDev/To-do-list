@@ -1,3 +1,5 @@
+import create from "./project.js"
+
 const displayModals = ()=>{
 
     const toAddProj = ()=>{
@@ -29,4 +31,18 @@ const displayModals = ()=>{
     return{toAddProj,toAddTodo,toCloseAddProj,toCloseAddTodo}
 }
 
-export default displayModals;
+const displayProjects = ()=>{
+
+    const saveBtn = document.querySelector("#save-project-btn");
+    saveBtn.addEventListener("click",()=>{
+        const listSection = document.querySelector("#project-list");
+        const proj = document.createElement("li");
+        const projName = document.querySelector("#project-name-input").value.trim();
+        proj.classList.add("project");
+        proj.textContent = `${projName}`;
+        listSection.append(proj);
+    })
+
+}
+
+export {displayModals,displayProjects};

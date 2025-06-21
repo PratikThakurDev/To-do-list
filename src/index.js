@@ -1,10 +1,14 @@
 import "./styles.css";
-import create from "./project.js"
-import modal from "./DOMstuff.js"
+import {displayModals,displayProjects} from "./DOMstuff.js";
 
-const displayModal = modal()
+const displayModal= displayModals()
+
+displayProjects()
+
 displayModal.toAddProj()
 displayModal.toAddTodo()
 displayModal.toCloseAddProj()
 displayModal.toCloseAddTodo()
+
+
 
