@@ -1,4 +1,4 @@
-const showModals = ()=>{
+const displayModals = ()=>{
 
     const toAddProj = ()=>{
         document.querySelector("#add-project-btn").addEventListener("click", () => {
@@ -13,9 +13,20 @@ const showModals = ()=>{
         });
 
     }
-    return{toAddProj,toAddTodo}
+
+    const toCloseAddTodo = ()=>{
+        document.querySelector("#cancel-todo-btn").addEventListener("click", () => {
+            document.querySelector("#todo-modal").classList.add("hidden");
+        });
+    }
+
+    const toCloseAddProj = ()=>{
+        document.querySelector("#cancel-project-btn").addEventListener("click", () => {
+            document.querySelector("#project-modal").classList.add("hidden");
+        });
+    }
+
+    return{toAddProj,toAddTodo,toCloseAddProj,toCloseAddTodo}
 }
 
-
-
-export default showModals;
+export default displayModals;

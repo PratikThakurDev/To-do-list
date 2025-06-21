@@ -5,4 +5,6 @@ import modal from "./DOMstuff.js"
 const displayModal = modal()
 displayModal.toAddProj()
 displayModal.toAddTodo()
+displayModal.toCloseAddProj()
+displayModal.toCloseAddTodo()
 
