@@ -25,7 +25,8 @@
 
       <!-- Main Panel: Todos -->
         <main id="main">
-            <h2 id="project-title">Inbox</h2>
+            <h2 id="project-title">Select a project</h2>
+            
             <ul id="todo-list">
                 <li class="todo-item high" data-id="uuid-123">
                     <div class="todo-header">
@@ -46,29 +47,33 @@
             <button id="add-todo-btn">+ Add Todo</button>
         </main>
     </div>
-    <div id="project-modal" class="modal hidden">
-        <div class="modal-content">
-        <h3>Add New Project</h3>
-        <input type="text" id="project-name-input" placeholder="Project name" />
-        <button id="save-project-btn">Save</button>
-        <button id="cancel-project-btn">Cancel</button>
+    <form class="project-form">
+        <div id="project-modal" class="modal hidden">
+            <div class="modal-content">
+            <h3>Add New Project</h3>
+            <input type="text" id="project-name-input" placeholder="Project name" />
+            <button id="save-project-btn">Save</button>
+            <button id="cancel-project-btn">Cancel</button>
+            </div>
         </div>
-    </div>
-    <div id="todo-modal" class="modal hidden">
-        <div class="modal-content">
-            <h3>Add New Todo</h3>
-            <input type="text" id="todo-title" placeholder="Title" required />
-            <textarea id="todo-description" placeholder="Description"></textarea>
-            <input type="date" id="todo-due-date" />
-            <select id="todo-priority">
-                <option value="low">Low</option>
-                <option value="medium" selected>Medium</option>
-                <option value="high">High</option>
-            </select>
-            <button id="save-todo-btn">Save</button>
-            <button id="cancel-todo-btn">Cancel</button>
+    </form>
+    <form class="todo-form">
+        <div id="todo-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>Add New Todo</h3>
+                <input type="text" id="todo-title" placeholder="Title" required />
+                <textarea id="todo-description" placeholder="Description"></textarea>
+                <input type="date" id="todo-due-date" />
+                <select id="todo-priority">
+                    <option value="low">Low</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <button id="save-todo-btn">Save</button>
+                <button id="cancel-todo-btn">Cancel</button>
+            </div>
         </div>
-    </div>
+    </form>
 
 
 </div>

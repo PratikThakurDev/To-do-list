@@ -1,6 +1,6 @@
 import {displayModals,displayProjects,switchProj,displayTodo} from "./DOMstuff.js";
 
-const projList = [];
+let projList = [];
 
 const createProject = (name) => {
     const projName = name;
@@ -10,6 +10,7 @@ const createProject = (name) => {
 };
 
 const addProject = (name) => {
+
     const project = createProject(name);
     projList.push(project);
     return project;
@@ -18,11 +19,15 @@ const addProject = (name) => {
 
 const storeProj = () => {
     const saveBtn = document.querySelector("#save-project-btn");
-    saveBtn.addEventListener("click", () => {
+    saveBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
         const name = document.querySelector("#project-name-input").value.trim();
         if (!name) return;
         addProject(name);
         displayProjects();
+        document.querySelector(".project-form").reset();
+        document.querySelector("#project-modal").classList.add("hidden");
     });
 };
 
