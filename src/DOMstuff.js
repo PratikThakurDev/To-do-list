@@ -1,4 +1,4 @@
-import {projList} from "./project.js"
+import {projList,saveToLocalStorage} from "./project.js"
 import { createTodo,addTodo } from "./todo.js";
 
 const displayModals = ()=>{
@@ -100,6 +100,8 @@ const displayTodo = ()=>{
             })
         }
     })
+   
+
 }
 
 const switchProj = () => {
@@ -142,6 +144,8 @@ const deleteTodo = ()=>{
             }
         })
         displayTodo()
+        saveToLocalStorage(); 
+
     })
 }
 
@@ -193,6 +197,8 @@ const editTodo = () => {
             document.querySelector("#todo-modal").classList.add("hidden");
 
             displayTodo();
+            saveToLocalStorage(); 
+
         });
     });
 };

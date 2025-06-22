@@ -10,11 +10,12 @@ const createProject = (name) => {
 };
 
 const addProject = (name) => {
-
     const project = createProject(name);
     projList.push(project);
+    saveToLocalStorage();
     return project;
 };
+
 
 
 const storeProj = () => {
@@ -32,5 +33,20 @@ const storeProj = () => {
 };
 
 
-export { projList, addProject, storeProj };
+const saveToLocalStorage = () => {
+    localStorage.setItem("projects", JSON.stringify(projList));
+};
+
+const loadFromLocalStorage = () => {
+    const data = localStorage.getItem("projects");
+    if (data) {
+        const parsed = JSON.parse(data);
+        projList.length = 0;
+        parsed.forEach(p => projList.push(p));
+    }
+
+};
+
+export { projList, addProject, storeProj, saveToLocalStorage, loadFromLocalStorage };
+
 

@@ -1,6 +1,6 @@
 import {displayModals,displayProjects,switchProj,displayTodo} from "./DOMstuff.js";
 
-import {projList} from "./project.js"
+import {projList,saveToLocalStorage} from "./project.js"
 
 const createTodo = () =>{
 
@@ -21,21 +21,21 @@ const addTodo = ()=>{
         e.preventDefault();
 
         const clickedProj = document.querySelector(".active");
+        if(!clickedProj){
+            return
+        }
         projList.forEach((project)=>{
             if(clickedProj.dataset.id === project.projId){
                 const todo = createTodo();
                 project.todos.push(todo);
-                displayTodo()
+                displayTodo();
+                saveToLocalStorage(); 
             }   
         })
         document.querySelector(".todo-form").reset();
         document.querySelector("#todo-modal").classList.add("hidden");
     })
 
-
-}
-
-const deleteTodo = ()=>{
 
 }
 

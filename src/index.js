@@ -1,22 +1,22 @@
 import "./styles.css";
 import {displayModals,displayProjects,switchProj,displayTodo,deleteTodo,editTodo} from "./DOMstuff.js";
-import { storeProj } from "./project.js";
-import { createTodo,addTodo } from "./todo.js";
+import { storeProj ,loadFromLocalStorage} from "./project.js";
+import { createTodo,addTodo} from "./todo.js";
 
+loadFromLocalStorage();
+const displayModal= displayModals();
 
-const displayModal= displayModals()
+displayProjects();
+switchProj();
+deleteTodo();
+editTodo();
 
-displayProjects()
-switchProj()
-deleteTodo()
-editTodo()
+displayModal.toAddProj();
+displayModal.toAddTodo();
+displayModal.toCloseAddProj();
+displayModal.toCloseAddTodo();
 
-displayModal.toAddProj()
-displayModal.toAddTodo()
-displayModal.toCloseAddProj()
-displayModal.toCloseAddTodo()
-
-displayTodo()                                                                          
+displayTodo();                                                               
 
 storeProj(); 
-addTodo()
+addTodo();
