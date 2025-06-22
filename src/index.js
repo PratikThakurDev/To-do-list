@@ -17,4 +17,4 @@ displayModal.toCloseAddTodo()
 
 displayTodo()                                                                          
 
-storeProj(); // ✅ add this line
+storeProj(); 
